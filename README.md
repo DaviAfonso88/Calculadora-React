@@ -40,14 +40,14 @@ src/
 
 ## 🎯 Funcionalidades
 
-✔️ Interface com **botões reutilizáveis**
-✔️ **Display dinâmico** que mostra números e resultados
-✔️ Operações: **adição, subtração, multiplicação e divisão**
-✔️ Botão **AC** (limpar memória)
-✔️ Suporte a números decimais com `.`
-✔️ Layout responsivo baseado em **CSS Grid**
-✔️ Uso de **props** para comunicação entre componentes
-✔️ Estado controlado no componente principal (`Calculator`)
+- ✔️ Interface com botões reutilizáveis  
+- ✔️ Display dinâmico que mostra números e resultados  
+- ✔️ Operações: adição, subtração, multiplicação e divisão  
+- ✔️ Botão AC (limpar memória)  
+- ✔️ Suporte a números decimais com `.`  
+- ✔️ Layout responsivo baseado em CSS Grid  
+- ✔️ Uso de props para comunicação entre componentes  
+- ✔️ Estado controlado no componente principal (**Calculator**)  
 
 ---
 
@@ -122,6 +122,45 @@ src/
 
 ---
 
+## 🌐 Deploy no GitHub Pages
+
+Para publicar sua calculadora no **GitHub Pages**, siga os passos abaixo:
+
+1. Instale a dependência:
+
+   ```bash
+   npm install gh-pages --save-dev
+   ```
+
+2. No arquivo `package.json`, adicione a seguinte linha (substitua `seu-usuario` e `nome-do-repositorio`):
+
+   ```json
+   "homepage": "https://seu-usuario.github.io/nome-do-repositorio"
+   ```
+
+3. Ainda no `package.json`, adicione os scripts:
+
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+
+4. Execute o comando para gerar o deploy:
+
+   ```bash
+   npm run deploy
+   ```
+
+5. Acesse o link:
+
+   ```
+   https://seu-usuario.github.io/nome-do-repositorio
+   ```
+
+---
+
 ## 📖 O que foi aprendido
 
 * Criação e organização de componentes em React.
@@ -130,15 +169,20 @@ src/
 * Controle de **estado** com arrays e objetos.
 * Estilização usando **CSS Grid** e variáveis CSS.
 * Importação de fontes customizadas e aplicação global no projeto.
+* Deploy de aplicações React no **GitHub Pages**.
 
 ---
 
-## ✨ Demonstração
+## 👨‍💻 Desenvolvido por
 
-*(adicione prints ou um GIF do projeto rodando aqui)*
-
----
-
-## 📜 Licença
-
-Este projeto é de uso livre para fins de estudo.
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+         <img src="https://avatars.githubusercontent.com/u/89953265?v=4" width="100px;" alt="Foto de Davi Afonso no GitHub"/><br>
+        <sub>
+          <b>Davi Afonso</b>
+        </sub>
+      </a>
+    </td>
+</table>

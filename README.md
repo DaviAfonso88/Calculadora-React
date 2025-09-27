@@ -3,6 +3,10 @@
 Este projeto é uma **calculadora funcional** desenvolvida em **React**, criada para consolidar conceitos estudados como **componentização**, **props**, **estado**, **eventos** e **estilização modularizada**.
 A aplicação segue a lógica de uma calculadora básica, permitindo realizar operações matemáticas simples de forma clara e organizada.
 
+<p align="center">
+  🌐 <a href="https://daviafonso88.github.io/Calculadora-React/" target="_blank"><b>Acesse o projeto online</b></a>
+</p>
+
 ---
 
 ## 🚀 Tecnologias utilizadas

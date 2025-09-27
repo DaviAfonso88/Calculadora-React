@@ -1,70 +1,192 @@
-# Getting Started with Create React App
+# 🧮 Calculadora em React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é uma **calculadora funcional** desenvolvida em **React**, criada para consolidar conceitos estudados como **componentização**, **props**, **estado**, **eventos** e **estilização modularizada**.
+A aplicação segue a lógica de uma calculadora básica, permitindo realizar operações matemáticas simples de forma clara e organizada.
 
-## Available Scripts
+<p align="center">
+  🌐 <a href="https://daviafonso88.github.io/Calculadora-React/" target="_blank"><b>Acesse o projeto online</b></a>
+</p>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Tecnologias utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [React](https://react.dev/) (componentes funcionais e de classe)
+* JavaScript (ES6+)
+* CSS3 com variáveis customizadas
+* Fonte [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Estrutura do projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── components/
+│   ├── Button.css       # Estilos dos botões
+│   ├── Button.jsx       # Componente de botão reutilizável
+│   ├── Display.css      # Estilos do display
+│   └── Display.jsx      # Componente que exibe os valores
+│
+├── fonts/
+│   └── RobotoMono-Thin.ttf  # Fonte customizada
+│
+├── main/
+│   ├── Calculator.css   # Estilos da calculadora
+│   └── Calculator.jsx   # Componente principal com toda a lógica
+│
+├── App.js               # Estrutura base do projeto
+├── index.js             # Ponto de entrada da aplicação
+└── index.css            # Estilos globais (fonte e layout)
+```
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎯 Funcionalidades
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ✔️ Interface com botões reutilizáveis  
+- ✔️ Display dinâmico que mostra números e resultados  
+- ✔️ Operações: adição, subtração, multiplicação e divisão  
+- ✔️ Botão AC (limpar memória)  
+- ✔️ Suporte a números decimais com `.`  
+- ✔️ Layout responsivo baseado em CSS Grid  
+- ✔️ Uso de props para comunicação entre componentes  
+- ✔️ Estado controlado no componente principal (**Calculator**)  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🔎 Detalhes dos componentes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔘 Button
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Recebe `props.label` para definir o texto do botão.
+* Pode ter variações de estilo:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  * `operation` → botões de operações (+, -, *, /, =)
+  * `double` e `triple` → botões que ocupam mais espaço no grid
+* Dispara uma função `props.click` ao ser clicado, enviando o valor do botão.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 🖥️ Display
 
-## Learn More
+* Componente simples que recebe `props.value` e exibe no display da calculadora.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 🧮 Calculator
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Componente **de classe** que contém toda a lógica da calculadora.
+* Gerencia o **estado interno**:
 
-### Code Splitting
+  ```js
+  const initialState = {
+    displayValue: "0",
+    clearDisplay: false,
+    operation: null,
+    values: [0, 0],
+    current: 0
+  };
+  ```
+* Principais métodos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  * `clearMemory()` → limpa o estado.
+  * `setOperation(op)` → define ou executa a operação matemática.
+  * `addDigit(n)` → insere números e trata ponto decimal.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## ⚙️ Como executar o projeto
 
-### Making a Progressive Web App
+1. Clone este repositório:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   ```bash
+   git clone https://github.com/seu-usuario/calculadora-react.git
+   ```
 
-### Advanced Configuration
+2. Acesse a pasta:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   cd calculadora-react
+   ```
 
-### Deployment
+3. Instale as dependências:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```bash
+   npm install
+   ```
 
-### `npm run build` fails to minify
+4. Execute o projeto:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   npm start
+   ```
+
+5. Acesse no navegador:
+
+   ```
+   http://localhost:3000
+   ```
+
+---
+
+## 🌐 Deploy no GitHub Pages
+
+Para publicar sua calculadora no **GitHub Pages**, siga os passos abaixo:
+
+1. Instale a dependência:
+
+   ```bash
+   npm install gh-pages --save-dev
+   ```
+
+2. No arquivo `package.json`, adicione a seguinte linha (substitua `seu-usuario` e `nome-do-repositorio`):
+
+   ```json
+   "homepage": "https://seu-usuario.github.io/nome-do-repositorio"
+   ```
+
+3. Ainda no `package.json`, adicione os scripts:
+
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+
+4. Execute o comando para gerar o deploy:
+
+   ```bash
+   npm run deploy
+   ```
+
+5. Acesse o link:
+
+   ```
+   https://seu-usuario.github.io/nome-do-repositorio
+   ```
+
+---
+
+## 📖 O que foi aprendido
+
+* Criação e organização de componentes em React.
+* Diferença entre **componentes funcionais** e **de classe**.
+* Uso de **props** para reutilização de componentes.
+* Controle de **estado** com arrays e objetos.
+* Estilização usando **CSS Grid** e variáveis CSS.
+* Importação de fontes customizadas e aplicação global no projeto.
+* Deploy de aplicações React no **GitHub Pages**.
+
+---
+
+## 👨‍💻 Desenvolvido por
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+         <img src="https://avatars.githubusercontent.com/u/89953265?v=4" width="100px;" alt="Foto de Davi Afonso no GitHub"/><br>
+        <sub>
+          <b>Davi Afonso</b>
+        </sub>
+      </a>
+    </td>
+</table>

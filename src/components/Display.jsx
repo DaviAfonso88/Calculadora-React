@@ -1,0 +1,7 @@
+import "./Display.css"
+
+const Display = (props) => (
+    <div className="display">{props.value}</div>
+)
+    
+export{Display}
